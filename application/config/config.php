@@ -2,6 +2,15 @@
 
 /*
 |--------------------------------------------------------------------------
+| Include configuration file
+|--------------------------------------------------------------------------
+|
+| Include installation specific configuration file
+|
+*/
+include_once('./.config');
+/*
+|--------------------------------------------------------------------------
 | Base Site URL
 |--------------------------------------------------------------------------
 |
@@ -106,7 +115,7 @@ $config['enable_hooks'] = FALSE;
 | http://codeigniter.com/user_guide/general/creating_libraries.html
 |
 */
-$config['subclass_prefix'] = 'MY_';
+$config['subclass_prefix'] = 'MAZZOPS_';
 
 
 /*
@@ -180,7 +189,7 @@ $config['directory_trigger']  = 'd'; // experimental not currently in use
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = 0;
+$config['log_threshold'] = SITE_LOG_THRESHOLD;
 
 /*
 |--------------------------------------------------------------------------
@@ -191,7 +200,7 @@ $config['log_threshold'] = 0;
 | application/logs/ folder. Use a full server path with trailing slash.
 |
 */
-$config['log_path'] = '';
+$config['log_path'] = SITE_LOG_PATH;
 
 /*
 |--------------------------------------------------------------------------
@@ -213,7 +222,7 @@ $config['log_date_format'] = 'Y-m-d H:i:s';
 | system/cache/ folder.  Use a full server path with trailing slash.
 |
 */
-$config['cache_path'] = '';
+$config['cache_path'] = SITE_CACHE_PATH;
 
 /*
 |--------------------------------------------------------------------------
@@ -224,7 +233,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = SITE_ENCRYPT_KEY;
 
 /*
 |--------------------------------------------------------------------------
@@ -244,12 +253,12 @@ $config['encryption_key'] = '';
 | 'sess_time_to_update'   = how many seconds between CI refreshing Session Information
 |
 */
-$config['sess_cookie_name']   = 'ci_session';
+$config['sess_cookie_name']   = SITE_COOKIE_NAME;
 $config['sess_expiration']    = 7200;
 $config['sess_expire_on_close'] = FALSE;
-$config['sess_encrypt_cookie']  = FALSE;
-$config['sess_use_database']  = FALSE;
-$config['sess_table_name']    = 'ci_sessions';
+$config['sess_encrypt_cookie']  = TRUE;
+$config['sess_use_database']  = TRUE;
+$config['sess_table_name']    = SITE_SESSION_TABLE;
 $config['sess_match_ip']    = FALSE;
 $config['sess_match_useragent'] = TRUE;
 $config['sess_time_to_update']  = 300;
@@ -279,7 +288,7 @@ $config['cookie_secure']  = FALSE;
 | COOKIE data is encountered
 |
 */
-$config['global_xss_filtering'] = FALSE;
+$config['global_xss_filtering'] = TRUE;
 
 /*
 |--------------------------------------------------------------------------
