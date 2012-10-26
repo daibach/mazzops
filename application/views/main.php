@@ -11,7 +11,11 @@
   <body>
 
     <h1>Is MAZZOPS happening?</h1>
+    <?php if($mazzops) : ?>
+    <h2 class="fuckyeah">Fuck yeah</h2>
+    <?php else : ?>
     <h2 class="notnow">Not right now</h2>
+    <?php endif; ?>
 
     <p class="otter"><img src="/images/mazzops-otter.png" width="200px"/></p>
     <p class="builtfor">Built for <a href="http://twitter.com/mnowster">@mnowster</a> by <a href="http://twitter.com/dafyddbach">@dafyddbach</a>.

@@ -4,7 +4,8 @@ class Welcome extends CI_Controller {
 
   public function index()
   {
-    $this->load->view('main');
+    $data['mazzops'] = $this->settings_model->is_mazzops_happening();
+    $this->load->view('main',$data);
   }
 }
 
